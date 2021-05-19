@@ -1,6 +1,11 @@
 const sum = require('./sum');
+const firstArr = [1];
+const secondArr = [-1,0,1];
 
-test('adds 1 + 2 to equal 3', () => {
-    expect(sum(1, 2)).toBe(3);
+test('sum, array with not enough elements to perform, exception thrown', () => {
+    expect(()=>{sum(firstArr)}).toThrow('Insufficient array length');
 });
 
+test('sum, array with enough elements to perform, exception not thrown', () => {
+    expect(()=>{sum(secondArr)}).not.toThrow(Error);
+});
