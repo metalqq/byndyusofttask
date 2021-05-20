@@ -14,10 +14,10 @@ function sum (arr = []) {
             } else if (el < b)
                 b = el;
         }
-
+        else
+            throw new Error('Invalid data type in the array');
     }
     return  a + b;
 }
 module.exports = sum;
-
 
